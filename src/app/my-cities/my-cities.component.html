@@ -1,0 +1,22 @@
+<div id="find-cities" class="container-fluid">
+  <section class="container-fluid jumbotron jumbotron-color main-margin-top box-shadow">
+    <h2>
+      <span class="fa fa-cloud h-icon-size" aria-hidden="true"></span>
+      Here are all the cities you have saved
+    </h2>
+  </section>
+
+  <article class="well col-xs-12"
+           *ngFor="let city of citiesList">
+    <section class="right">
+      <button class="btn btn-info" (click)="seeDetails(city)">
+        See details
+      </button>
+    </section>
+
+    <h3><strong>City name</strong>: {{city.name}}</h3>
+    <h4><strong>Country</strong>: {{city.sys.country}}</h4>
+  </article>
+</div>
+
+

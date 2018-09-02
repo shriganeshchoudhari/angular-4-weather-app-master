@@ -1,0 +1,34 @@
+<div id="find-cities" class="container-fluid">
+  <section class="container-fluid jumbotron jumbotron-color main-margin-top box-shadow">
+    <h2>
+      <span class="fa fa-sun-o h-icon-size" aria-hidden="true"></span>
+      Search and find a city
+    </h2>
+
+    <form novalidate
+          [formGroup]="searchForm"
+          (submit)="searchCity()">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">
+          <span class="fa fa-search" aria-hidden="true"></span>
+        </span>
+        <input type="text"
+               class="form-control"
+               placeholder="City name"
+               aria-describedby="Search"
+               formControlName="searchInput">
+      </div>
+
+      <section class="margin-top right">
+        <button class="btn btn-default"
+                [disabled]="searchForm.invalid">
+          Search
+        </button>
+      </section>
+    </form>
+  </section>
+
+  <app-results [searchResult]="result">
+  </app-results>
+
+</div>
